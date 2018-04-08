@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.ThirdPartyLiability.Identity", "Aldagi.ThirdPartyLiability.Identity\Aldagi.ThirdPartyLiability.Identity.csproj", "{1720D8FE-83C1-4789-901A-8573E1060341}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.IdentityClientTestConsole", "Aldagi.IdentityClientTestConsole\Aldagi.IdentityClientTestConsole.csproj", "{8F669384-0855-4ACA-BD7A-14A3560BDF60}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.ThirdPartyLiability.Api", "Aldagi.ThirdPartyLiability.Api\Aldagi.ThirdPartyLiability.Api.csproj", "{6280DFB6-1345-449D-9436-27318F46F594}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.Common", "Aldagi.Common\Aldagi.Common.csproj", "{F43B05A7-4432-4349-9B15-0E5F80E15F46}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.ThirdPartyLiability.DAL", "Aldagi.ThirdPartyLiability.DAL\Aldagi.ThirdPartyLiability.DAL.csproj", "{125AD06D-AFDC-4978-ACA1-8F988FA4CA32}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.ThirdPartyLiability.BLL", "Aldagi.ThirdPartyLibrary.BLL\Aldagi.ThirdPartyLiability.BLL.csproj", "{8927B30A-9968-407A-8754-D4F91AC44DE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1720D8FE-83C1-4789-901A-8573E1060341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1720D8FE-83C1-4789-901A-8573E1060341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1720D8FE-83C1-4789-901A-8573E1060341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1720D8FE-83C1-4789-901A-8573E1060341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F669384-0855-4ACA-BD7A-14A3560BDF60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F669384-0855-4ACA-BD7A-14A3560BDF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F669384-0855-4ACA-BD7A-14A3560BDF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F669384-0855-4ACA-BD7A-14A3560BDF60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6280DFB6-1345-449D-9436-27318F46F594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6280DFB6-1345-449D-9436-27318F46F594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6280DFB6-1345-449D-9436-27318F46F594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6280DFB6-1345-449D-9436-27318F46F594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F43B05A7-4432-4349-9B15-0E5F80E15F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F43B05A7-4432-4349-9B15-0E5F80E15F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F43B05A7-4432-4349-9B15-0E5F80E15F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F43B05A7-4432-4349-9B15-0E5F80E15F46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{125AD06D-AFDC-4978-ACA1-8F988FA4CA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125AD06D-AFDC-4978-ACA1-8F988FA4CA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125AD06D-AFDC-4978-ACA1-8F988FA4CA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125AD06D-AFDC-4978-ACA1-8F988FA4CA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8927B30A-9968-407A-8754-D4F91AC44DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8927B30A-9968-407A-8754-D4F91AC44DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8927B30A-9968-407A-8754-D4F91AC44DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8927B30A-9968-407A-8754-D4F91AC44DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4675BF59-EB27-423B-9661-5332E44911E9}
+	EndGlobalSection
+EndGlobal

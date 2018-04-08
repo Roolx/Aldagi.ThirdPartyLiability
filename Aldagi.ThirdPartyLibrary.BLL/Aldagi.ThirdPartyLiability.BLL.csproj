@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aldagi.Common\Aldagi.Common.csproj" />
+    <ProjectReference Include="..\Aldagi.ThirdPartyLiability.DAL\Aldagi.ThirdPartyLiability.DAL.csproj" />
+  </ItemGroup>
+
+</Project>
