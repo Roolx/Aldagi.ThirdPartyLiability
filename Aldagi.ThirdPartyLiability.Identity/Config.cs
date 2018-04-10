@@ -40,15 +40,21 @@ namespace Aldagi.ThirdPartyLiability.Identity
                 },
                 new Client()
                 {
-                    ClientId = "ro.client",
+                    ClientId = "adminClient",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = { "tplApi" },
-                    RedirectUris = new []{ "http://localhost:5001/resource-server/swagger/oauth2-redirect.html" }
+
+                     Claims = {
+                       new System.Security.Claims.Claim("identityUserId","1")
+                    },
+
+                     AlwaysSendClientClaims = true,
+
+                    AllowedScopes = { "tplApi" }
                 }
             };
 
@@ -60,8 +66,8 @@ namespace Aldagi.ThirdPartyLiability.Identity
             {
                 new TestUser
                 {
-                    SubjectId = "1",
-                    Username = "swagger",
+                    SubjectId = "2",
+                    Username = "admin",
                     Password = "123"
                 }
             };

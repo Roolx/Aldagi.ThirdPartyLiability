@@ -30,8 +30,6 @@ namespace Aldagi.ThirdPartyLiability.Identity
                 .AddInMemoryClients(Config.GetClients())
                 .AddTestUsers(Config.GetUsers());
 
-            //Transients
-
             services.AddMvc();
 
         }

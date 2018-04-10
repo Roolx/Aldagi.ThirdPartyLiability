@@ -42,7 +42,7 @@ namespace Aldagi.ThirdPartyLiability.Api.Controllers
         }
 
         [HttpGet("{clientId}")]
-        [ProducesResponseType(typeof(Client), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ClientDetails), (int)HttpStatusCode.OK)]
         public IActionResult GetDetails(int clientId)
         {
             return new JsonResult(_clientService.GetClientDetails(clientId, User.GetInternalUserId()));
@@ -66,13 +66,13 @@ namespace Aldagi.ThirdPartyLiability.Api.Controllers
         }
 
         [HttpGet("{clientId}/liability/details")]
-        public IActionResult GetClientLiability([FromQuery]int clientId)
+        public IActionResult GetClientLiability([FromRoute]int clientId)
         {
             return new JsonResult(_clientService.GetClientLiability(clientId, User.GetInternalUserId()));
         }
 
         [HttpPut("{clientId}/liability/status")]
-        public IActionResult UpdateClientLiabilityStatus([FromQuery] int clientId, [FromBody] TplStatus status)
+        public IActionResult UpdateClientLiabilityStatus([FromRoute] int clientId, [FromBody] TplStatus status)
         {
             _clientService.UpdateClientTPLStatus(clientId, status, User.GetInternalUserId());
             return Ok();
@@ -80,15 +80,15 @@ namespace Aldagi.ThirdPartyLiability.Api.Controllers
 
 
         [HttpPut("{clientId}/liability/term")]
-        public IActionResult UpdateClientLiabilityTerm([FromQuery] int clientId, [FromBody]int termId)
+        public IActionResult UpdateClientLiabilityTerm([FromRoute] int clientId, [FromBody]int termId)
         {
             _clientService.UpdateClientTPLTerm(clientId, termId, User.GetInternalUserId());
             return Ok();
         }
 
-        [HttpDelete("{clientId}/liability/remove")]
+        [HttpDelete("{clientId}/liability")]
         [SwaggerResponse((int)HttpStatusCode.NotFound, typeof(ApiResponse), "Client was not found")]
-        public IActionResult RemoveClientLiability([FromQuery] int clientId)
+        public IActionResult RemoveClientLiability([FromRoute] int clientId)
         {
             try
             {

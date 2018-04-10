@@ -1,0 +1,29 @@
+<mat-chip-list >
+    <button (click)="addClick()" mat-raised-button style="cursor:pointer" color="primary"style="margin-bottom:10px">
+        <mat-icon>add</mat-icon>
+    </button>
+
+</mat-chip-list>
+
+<mat-table [dataSource]='clients' class="mat-elevation-z8" style="height:100%">
+    <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+    <mat-row *matRowDef="let myRowData; columns: columnsToDisplay" (click)="selectRow(myRowData)"></mat-row>
+
+    <ng-container matColumnDef="firstName">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let client"> {{client.firstName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+        <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+        <mat-cell *matCellDef="let client"> {{client.lastName}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="personalId">
+        <mat-header-cell *matHeaderCellDef> Personal ID </mat-header-cell>
+        <mat-cell *matCellDef="let client"> {{client.personalId}} </mat-cell>
+    </ng-container>
+
+</mat-table>
+<mat-paginator class="mat-elevation-z8"></mat-paginator>

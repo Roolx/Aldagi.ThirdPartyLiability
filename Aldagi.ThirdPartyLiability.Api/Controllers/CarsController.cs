@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Aldagi.ThirdPartyLiability.BLL.Abstract;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Aldagi.ThirdPartyLiability.Api.Controllers
 {
@@ -32,9 +33,9 @@ namespace Aldagi.ThirdPartyLiability.Api.Controllers
 
 
         [HttpGet("{manufacturerId}")]
-        public IActionResult GetCarsByManufacturer([FromQuery]int manufacturerId)
+        public IActionResult GetCarsByManufacturer([FromRoute]int manufacturerId)
         {
-            return new JsonResult(_carService.GetManufacturers());
+            return new JsonResult(_carService.GetCarsByManufacturerId(manufacturerId));
         }
     }
 }

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Aldagi.Common.Entities;
+using Aldagi.Common.Enums;
 using Aldagi.ThirdPartyLiability.Api.Helpers;
 using Aldagi.ThirdPartyLiability.BLL.Abstract;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -17,7 +19,7 @@ namespace Aldagi.ThirdPartyLiability.Api.Controllers
 {
     [Produces("application/json")]
     [Route("liabilities")]
-    
+    [Authorize]
     public class LiabilityController : Controller
     {
         private readonly IThirdPartyLiabilityService _tplService;
@@ -50,6 +52,17 @@ namespace Aldagi.ThirdPartyLiability.Api.Controllers
             }
 
             return new JsonResult(term);
+        }
+
+        [HttpGet("statuses")]
+        [ProducesResponseType(typeof(List<KeyValuePair<int,string>>), 200)]
+        public IActionResult GetStatuses()
+        {
+            var resp = new List<KeyValuePair<string, int>> {
+                new KeyValuePair<string, int>("Paid",(int)TplStatus.Paid),
+                new KeyValuePair<string, int>("Unpaid",(int)TplStatus.Unpaid)
+            };
+            return new JsonResult(resp);
         }
     }
 }

@@ -27,8 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Aldagi.ThirdPartyLiability.BLL\Aldagi.ThirdPartyLiability.BLL.csproj" />
     <ProjectReference Include="..\Aldagi.ThirdPartyLiability.DAL\Aldagi.ThirdPartyLiability.DAL.csproj" />
-    <ProjectReference Include="..\Aldagi.ThirdPartyLibrary.BLL\Aldagi.ThirdPartyLiability.BLL.csproj" />
   </ItemGroup>
 
 </Project>

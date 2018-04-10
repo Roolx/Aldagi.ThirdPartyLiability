@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.Common", "Aldagi.Com
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.ThirdPartyLiability.DAL", "Aldagi.ThirdPartyLiability.DAL\Aldagi.ThirdPartyLiability.DAL.csproj", "{125AD06D-AFDC-4978-ACA1-8F988FA4CA32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.ThirdPartyLiability.BLL", "Aldagi.ThirdPartyLibrary.BLL\Aldagi.ThirdPartyLiability.BLL.csproj", "{8927B30A-9968-407A-8754-D4F91AC44DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.ThirdPartyLiability.BLL", "Aldagi.ThirdPartyLiability.BLL\Aldagi.ThirdPartyLiability.BLL.csproj", "{8927B30A-9968-407A-8754-D4F91AC44DE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldagi.ThirdpartyLiability.Web.Admin", "Aldagi.ThirdpartyLiability.Web.Admin\Aldagi.ThirdpartyLiability.Web.Admin.csproj", "{AEF3EB26-F1C4-4215-A690-4455A5FD2B9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8927B30A-9968-407A-8754-D4F91AC44DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8927B30A-9968-407A-8754-D4F91AC44DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8927B30A-9968-407A-8754-D4F91AC44DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEF3EB26-F1C4-4215-A690-4455A5FD2B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEF3EB26-F1C4-4215-A690-4455A5FD2B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEF3EB26-F1C4-4215-A690-4455A5FD2B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEF3EB26-F1C4-4215-A690-4455A5FD2B9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

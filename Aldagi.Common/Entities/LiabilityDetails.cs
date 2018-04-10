@@ -7,9 +7,9 @@ namespace Aldagi.Common.Entities
 {
     public class LiabilityDetails
     {
-        public int TplDetailsId { get; set; }
+        public int LiabilityDetailsId { get; set; }
         public TplStatus Status { get; set; } = TplStatus.Unpaid;
 
-        public int TPLTermId { get; set; }
+        public int LiabilityTermId { get; set; }
     }
 }

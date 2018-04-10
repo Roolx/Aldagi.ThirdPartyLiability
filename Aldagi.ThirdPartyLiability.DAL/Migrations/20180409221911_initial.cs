@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Aldagi.ThirdPartyLiability.DAL.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,7 @@ namespace Aldagi.ThirdPartyLiability.DAL.Migrations
                     CarId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ManufacturerId = table.Column<int>(nullable: false),
-                    ManufacturingYear = table.Column<DateTime>(nullable: false),
+                    ManufacturingYear = table.Column<int>(nullable: false),
                     ModelName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

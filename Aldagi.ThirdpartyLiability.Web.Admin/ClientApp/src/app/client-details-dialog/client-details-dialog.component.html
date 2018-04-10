@@ -1,0 +1,68 @@
+<h2 mat-dialog-title>Client Details</h2>
+<mat-dialog-content style="height:90%">
+
+
+    <mat-list>
+
+        <mat-list-item role="listitem">
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" [(ngModel)]="data.userDetails.email" disabled>
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Phone" [(ngModel)]="data.userDetails.phoneNumber" disabled>
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item role="listitem">
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Car Registration" [(ngModel)]="data.userDetails.carRegistrationNumber" disabled>
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item>
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" [value]="data.userDetails.dateOfBirth" disabled placeholder="Birth Date">
+                <mat-datepicker #picker disabled></mat-datepicker>
+            </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item role="listitem">
+            <mat-form-field>
+                <mat-select placeholder="Term Bonus" [(value)]="clientTermDetails.status">
+                    <mat-option *ngFor="let status of statuses" [value]="status.value"> {{status.key}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-list-item>
+
+
+        <mat-list-item role="listitem">
+            <mat-form-field>
+                <mat-select placeholder="Term Bonus" [(value)]="clientTermDetails.liabilityTermId">
+                    <mat-option *ngFor="let term of terms" [value]="term.liabilityTermId"> {{term.bonus}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-list-item>
+
+    </mat-list>
+
+    <mat-dialog-actions style="float: right;">
+        <button (click)="closeDialog('update')" mat-raised-button mat-dialog-close color="primary">
+            Edit
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button (click)="closeDialog('delete')" mat-raised-button mat-dialog-close color="primary">
+            Delete
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-raised-button mat-dialog-close color="accent">
+            Close
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-dialog-actions>
+
+</mat-dialog-content>

@@ -23,8 +23,8 @@ namespace Aldagi.IdentityClientTestConsole
                 return;
             }
 
-            var tokenClient = new TokenClient(discoveryResponse.TokenEndpoint, "testClient", "secret");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("tplApi");
+            var tokenClient = new TokenClient(discoveryResponse.TokenEndpoint, "adminClient", "secret");
+            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("admin","123");
 
             if (tokenResponse.IsError)
             {
@@ -38,7 +38,7 @@ namespace Aldagi.IdentityClientTestConsole
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await client.GetAsync("http://localhost:5001/liabilities/7");
+            var response = await client.GetAsync("http://localhost:5001/liabilities/2");
 
                 var content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine( JObject.Parse(content));

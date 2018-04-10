@@ -8,7 +8,7 @@ namespace Aldagi.ThirdPartyLiability.DAL.Entities
     {
         public int CarId { get; set; }
         public string ModelName { get; set; }
-        public DateTime ManufacturingYear { get; set; }
+        public int ManufacturingYear { get; set; }
         public int ManufacturerId { get; set; }
     }
 }

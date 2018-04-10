@@ -12,8 +12,8 @@ using System;
 namespace Aldagi.ThirdPartyLiability.DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20180407212650_Initial")]
-    partial class Initial
+    [Migration("20180409221911_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,14 +22,14 @@ namespace Aldagi.ThirdPartyLiability.DAL.Migrations
                 .HasAnnotation("ProductVersion", "2.0.2-rtm-10011")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.Car", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.Car", b =>
                 {
                     b.Property<int>("CarId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("ManufacturerId");
 
-                    b.Property<DateTime>("ManufacturingYear");
+                    b.Property<int>("ManufacturingYear");
 
                     b.Property<string>("ModelName");
 
@@ -38,7 +38,7 @@ namespace Aldagi.ThirdPartyLiability.DAL.Migrations
                     b.ToTable("Cars");
                 });
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.Client", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.Client", b =>
                 {
                     b.Property<int>("ClientId")
                         .ValueGeneratedOnAdd();
@@ -58,7 +58,7 @@ namespace Aldagi.ThirdPartyLiability.DAL.Migrations
                     b.ToTable("Clients");
                 });
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.ClientDetails", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.ClientDetails", b =>
                 {
                     b.Property<int>("ClientDetailsId")
                         .ValueGeneratedOnAdd();
@@ -88,7 +88,7 @@ namespace Aldagi.ThirdPartyLiability.DAL.Migrations
                     b.ToTable("ClientDetails");
                 });
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.InternalUser", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.InternalUser", b =>
                 {
                     b.Property<int>("InternalUserId")
                         .ValueGeneratedOnAdd();
@@ -100,7 +100,7 @@ namespace Aldagi.ThirdPartyLiability.DAL.Migrations
                     b.ToTable("InternalUsers");
                 });
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.Manufacturer", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.Manufacturer", b =>
                 {
                     b.Property<int>("ManufacturerId")
                         .ValueGeneratedOnAdd();
@@ -112,7 +112,7 @@ namespace Aldagi.ThirdPartyLiability.DAL.Migrations
                     b.ToTable("Manufacturers");
                 });
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.TPLDetails", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.TPLDetails", b =>
                 {
                     b.Property<int>("TplDetailsId")
                         .ValueGeneratedOnAdd();
@@ -128,7 +128,7 @@ namespace Aldagi.ThirdPartyLiability.DAL.Migrations
                     b.ToTable("TPLDetails");
                 });
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.TPLTerm", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.TPLTerm", b =>
                 {
                     b.Property<int>("TPLTermId")
                         .ValueGeneratedOnAdd();
@@ -146,37 +146,37 @@ namespace Aldagi.ThirdPartyLiability.DAL.Migrations
                     b.ToTable("TPLTerms");
                 });
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.Client", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.Client", b =>
                 {
-                    b.HasOne("Aldagi.ThirdPartyLiability.Common.Entities.ClientDetails", "ClientDetails")
+                    b.HasOne("Aldagi.ThirdPartyLiability.DAL.Entities.ClientDetails", "ClientDetails")
                         .WithMany()
                         .HasForeignKey("ClientDetailsId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.ClientDetails", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.ClientDetails", b =>
                 {
-                    b.HasOne("Aldagi.ThirdPartyLiability.Common.Entities.Car", "Car")
+                    b.HasOne("Aldagi.ThirdPartyLiability.DAL.Entities.Car", "Car")
                         .WithMany()
                         .HasForeignKey("CarId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Aldagi.ThirdPartyLiability.Common.Entities.TPLDetails", "TPLDetails")
+                    b.HasOne("Aldagi.ThirdPartyLiability.DAL.Entities.TPLDetails", "TPLDetails")
                         .WithMany()
                         .HasForeignKey("TPLDetailsId");
                 });
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.TPLDetails", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.TPLDetails", b =>
                 {
-                    b.HasOne("Aldagi.ThirdPartyLiability.Common.Entities.TPLTerm", "TPLTerm")
+                    b.HasOne("Aldagi.ThirdPartyLiability.DAL.Entities.TPLTerm", "TPLTerm")
                         .WithMany()
                         .HasForeignKey("TPLTermId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Aldagi.ThirdPartyLiability.Common.Entities.TPLTerm", b =>
+            modelBuilder.Entity("Aldagi.ThirdPartyLiability.DAL.Entities.TPLTerm", b =>
                 {
-                    b.HasOne("Aldagi.ThirdPartyLiability.Common.Entities.InternalUser", "IdentityUser")
+                    b.HasOne("Aldagi.ThirdPartyLiability.DAL.Entities.InternalUser", "IdentityUser")
                         .WithMany("TPLTerms")
                         .HasForeignKey("InternalUserId")
                         .OnDelete(DeleteBehavior.Cascade);

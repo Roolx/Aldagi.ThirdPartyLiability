@@ -1,0 +1,33 @@
+<!-- <nav>
+  <div class="nav-wrapper">
+     
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li [routerLinkActive]='["active"]'>
+        <a [routerLink]='["/clients"]'>Clients</a>
+      </li>
+      
+    </ul>
+    <ul class="right">
+        <li (click)='logOut()'><a class="waves-effect waves-light btn">Log Out</a></li>
+    </ul>
+  </div>
+</nav>
+ -->
+<mat-toolbar color="primary" class="mat-elevation-z6">
+
+    <button mat-button [routerLink]='["/clients"]' >
+        Clients
+        <mat-icon aria-hidden="true">face</mat-icon> 
+    </button>
+    
+    <div style="flex:1"></div>
+    <button mat-button (click)='logOut()' >
+        Logout
+        <mat-icon aria-hidden="true">&#xE8AC;</mat-icon> 
+    </button>
+    
+</mat-toolbar>
+
+<div *ngIf="isInitialPage" style="padding:15px; height:83%">
+    <router-outlet></router-outlet>
+</div>

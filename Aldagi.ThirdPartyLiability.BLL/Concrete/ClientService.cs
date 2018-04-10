@@ -20,7 +20,7 @@ namespace Aldagi.ThirdPartyLiability.BLL.Concrete
 
         public void AddClient(ClientRegistrationModel clientRegistration, int internalUserId)
         {
-            _clientDal.AddClient(clientRegistration,internalUserId);
+            _clientDal.AddClient(clientRegistration, internalUserId);
         }
 
         public void DeleteClientTPL(int clientId, int internalUserId)
@@ -38,12 +38,30 @@ namespace Aldagi.ThirdPartyLiability.BLL.Concrete
 
         public LiabilityDetails GetClientLiability(int clientId, int internalUserId)
         {
-            return _clientDal.GetClientLiability(clientId, internalUserId);
+            try
+            {
+                return _clientDal.GetClientLiability(clientId, internalUserId);
+            }
+            catch (DalException)
+            {
+
+                throw new ClientNotFoundException();
+            }
         }
 
         public TplStatus GetClientLiabilityStatus(int clientId, int internalUserId)
         {
-            return _clientDal.GetClientLiabilityStatus(clientId, internalUserId);
+            try
+
+            {
+                return _clientDal.GetClientLiabilityStatus(clientId, internalUserId);
+            }
+
+            catch (DalException)
+            {
+
+                throw new ClientNotFoundException();
+            }
         }
 
         public IEnumerable<Client> GetClients(int internalUserId)

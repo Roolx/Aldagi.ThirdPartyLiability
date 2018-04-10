@@ -30,6 +30,15 @@ namespace Aldagi.ThirdPartyLiability.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("all",
+                    policy =>
+                    policy.AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowAnyOrigin());
+            });
+
             services.AddMvc();
 
             services.AddAuthentication("Bearer")
@@ -87,7 +96,7 @@ namespace Aldagi.ThirdPartyLiability.Api
                 c.OAuthAdditionalQueryStringParams(new { client_id = "dsf", client_secret = "2BB80D537B1DA3E38BD30361AA855686BDE0EACD7162FEF6A25FE97BF527A25B" });
 
             });
-
+            app.UseCors("all");
             app.UseMvc();
         }
     }
