@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { UserService } from '../../shared/services/user.service';
 import { HttpErrorResponse, HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,7 +13,7 @@ export class SignInComponent implements OnInit {
   isLoginError: boolean = false;
   baseUrl: string;
 
-  constructor(private userService: UserService, private router: Router, http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(private userService: UserService, private router: Router, http: HttpClient, @Inject('BASE_URL') baseUrl: string, private toast: ToastrService) {
     this.baseUrl = baseUrl;
   }
 
@@ -24,7 +25,7 @@ export class SignInComponent implements OnInit {
       localStorage.setItem("access_token",data.access_token);
       this.router.navigate(['/home']);
     }, (error => {
-      this.isLoginError = true;
+        this.toast.error("Wrong username or password");
     }));
   }
 

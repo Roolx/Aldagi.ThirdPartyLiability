@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import {MatTableModule, MatRadioModule, MatDialogModule, MAT_CHECKBOX_REQUIRED_VALIDATOR, MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule, MatIconModule, MatToolbarModule, MatTabsModule, MatListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule, MatPaginatorModule, MatChipRemove, MatChipsModule, MatSelectModule, MatOptionModule} from '@angular/material';
-
+import { ToastrModule} from 'ngx-toastr'
 import { UserService } from './shared/services/user.service';
 
 import { appRoutes } from './routes';
@@ -60,7 +60,8 @@ import { TermService } from './shared/services/term.service';
     MatPaginatorModule,
     MatChipsModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     UserService,

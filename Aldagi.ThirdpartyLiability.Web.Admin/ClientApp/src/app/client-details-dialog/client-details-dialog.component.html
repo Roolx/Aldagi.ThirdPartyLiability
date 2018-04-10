@@ -33,7 +33,7 @@
 
         <mat-list-item role="listitem">
             <mat-form-field>
-                <mat-select placeholder="Term Bonus" [(value)]="clientTermDetails.status">
+                <mat-select placeholder="Status" [(value)]="clientTermDetails.status">
                     <mat-option *ngFor="let status of statuses" [value]="status.value"> {{status.key}}</mat-option>
                 </mat-select>
             </mat-form-field>
