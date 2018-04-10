@@ -40,8 +40,8 @@ export class ClientsComponent implements OnInit {
   selectRow(client: any) {
     this.clientService.getClientDetails(client).subscribe(resp => {
       let dialogRef = this.dialog.open(ClientDetailsDialogComponent, {
-        height: '600px',
-        width: '300px',
+        height: '580px',
+        width: '350px',
         data: { userDetails: resp, clientId: client.clientId }
       });
       dialogRef.afterClosed().subscribe(result => {
@@ -56,7 +56,7 @@ export class ClientsComponent implements OnInit {
           }
           else{
             this.clientService.delecteClientTerm(client).subscribe(resp=>{
-              
+
             })
           }
         }
